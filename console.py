@@ -12,16 +12,22 @@ class Console:
 
     def cmdloop(self):
         """Run the command loop"""
-        while True:
-            user_input = input(self.prompt)
-            if user_input == "quit":
-                break
-            elif user_input == "help":
-                print("Documented commands (type help <topic>):")
-                print("========================================")
-                print("EOF  help  quit")
-            else:
-                print("Invalid command. Type 'help' for assistance.")
+        try:
+            while True:
+                user_input = input(self.prompt)
+                if user_input == "quit":
+                    break
+                elif user_input == "help":
+                    print("\n")
+                    print("Documented commands (type help <topic>):")
+                    print("========================================")
+                    print("EOF  help  quit")
+                    print("\n")
+                else:
+                    self.prompt = "(hbnb) "
+        except EOFError:
+            print("\n")
+            sys.exit(0)
 
 
 def main():
