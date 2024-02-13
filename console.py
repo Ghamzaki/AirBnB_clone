@@ -18,11 +18,9 @@ class Console:
                 if user_input == "quit":
                     break
                 elif user_input == "help":
-                    print("\n")
-                    print("Documented commands (type help <topic>):")
+                    print("\nDocumented commands (type help <topic>):")
                     print("========================================")
-                    print("EOF  help  quit")
-                    print("\n")
+                    print("EOF  help  quit\n")
                 else:
                     self.prompt = "(hbnb) "
         except EOFError:
